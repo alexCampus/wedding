@@ -2,9 +2,37 @@ var cacheName = 'blog-1';
 var dataCacheName = 'data-blog-1';
 var filesToCache = [
     '/',
-    '/login',
-    './js/app.js',
-    './css/app.css'
+    './js/bootstrap.min.js',
+    './js/jquery.waypoints.min.js',
+    './js/jquery-3.2.1.min.js',
+    './js/main.js',
+    './js/owl.carousel.min.js',
+    './js/popper.min.js',
+    './css/animate.css',
+    './css/bootstrap.css',
+    './css/owl.carousel.min.css',
+    './css/style.css',
+    './fonts/ionicons/css/ionicons.min.css',
+    './fonts/fontawesome/css/font-awesome.min.css',
+    './fonts/flaticon/font/flaticon.css',
+    './fonts/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0',
+    './fonts/ionicons/fonts/ionicons.ttf?v=2.0.0',
+    './fonts/fontawesome/fonts/fontawesome-webfont.woff?v=4.7.0',
+    './fonts/ionicons/fonts/ionicons.woff?v=2.0.0',
+    './fonts/fontawesome/fonts/fontawesome-webfont.ttf?v=4.7.0',
+    './images/img_1.jpg',
+    './images/img_2.jpg',
+    './images/img_3.jpg',
+    './images/img_4.jpg',
+    './images/img_5.jpg',
+    './images/img_6.jpg',
+    './images/img_7.jpg',
+    './images/img_8.jpg',
+    './images/img_9.jpg',
+    './images/img_10.jpg',
+    './images/img_11.jpg',
+    './images/img_12.jpg',
+    './images/person_1.jpg'
 ];
 
 self.addEventListener('install', function(e) {
