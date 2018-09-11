@@ -29,9 +29,18 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return view('landingPage');
+    }
+
+    public function home()
+    {
         return view('home');
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function inscriptionLandingPage(Request $request)
     {
         $this->inscriptionModel->name  = $request->input('name');
