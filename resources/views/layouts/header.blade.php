@@ -1,4 +1,4 @@
-<div class="qbootstrap-hero" data-section="home">
+<div class="qbootstrap-hero" data-section="home" id="header">
     <div class="qbootstrap-overlay"></div>
     <div class="qbootstrap-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url('{{asset("images/cover_bg_3.jpg")}}');">
         <div class="display-t">

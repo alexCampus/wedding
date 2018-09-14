@@ -42,6 +42,16 @@ class HomeController extends Controller
         return view('forum');
     }
 
+    public function onePost()
+    {
+        return view('onePostForum');
+    }
+
+    public function formForum()
+    {
+        return view('formForum');
+    }
+
     /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
