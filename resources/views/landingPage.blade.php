@@ -145,7 +145,7 @@
                                 <div class="timeline-body">
                                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in .</p>
                                 </div>
-                            </div>First We Meet
+                            </div>
                         </li>
                         <li class="timeline-inverted animate-box">
                             <div class="timeline-badge" style="background-image:url('{{asset("images/couple-2.jpg")}}');"></div>
