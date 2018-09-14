@@ -37,6 +37,11 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function forum()
+    {
+        return view('forum');
+    }
+
     /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector

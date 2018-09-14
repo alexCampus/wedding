@@ -53,6 +53,7 @@
         </header>
     @endif
     <div id="app">
+        @include('layouts.header')
         @yield('content')
     </div>
     @include('layouts.footer')
