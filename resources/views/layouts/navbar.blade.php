@@ -1,24 +1,32 @@
-<div class="container">
-    <!-- <div class="row"> -->
+<div class="container-fluid">
     <nav class="navbar navbar-default">
         <div class="navbar-header">
             <!-- Mobile Toggle Menu Button -->
             <a href="#" class="js-qbootstrap-nav-toggle qbootstrap-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-            <a class="navbar-brand" href="index.html">Wedding</a>
+            <a class="navbar-brand" href="{{ route('home') }}">Marylivier</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
-                <li><a href="#" data-nav-section="groom-bride"><span>Groom &amp; Bride</span></a></li>
-                <li><a href="#" data-nav-section="story"><span>Love Story</span></a></li>
-                <li><a href="#" data-nav-section="greetings"><span>Greetings</span></a></li>
-                <li><a href="#" data-nav-section="people"><span>People</span></a></li>
-                <li><a href="#" data-nav-section="when-where"><span>When &amp; Where</span></a></li>
-                <li><a href="#" data-nav-section="rsvp"><span>RSVP</span></a></li>
-                <li><a href="#" data-nav-section="gallery"><span>Gallery</span></a></li>
-                <li><a href="#" data-nav-section="blog"><span>Blog</span></a></li>
+                <li class="active"><a href="#lesMaries"><span>Les Mariés</span></a></li>
+                <li><a href="#lesTemoins"><span>Les Témoins</span></a></li>
+                <li><a href="{{  route('organisation') }}"><span>Organisation</span></a></li>
+                @if (Auth::user())
+                    <li><a href="{{ route('forum') }}"><span>Forum</span></a></li>
+                    <li><a href="#"><span>Inscription Participation</span></a></li>
+                    <li><a href="#"><span>Photo / Vidéos</span></a></li>
+                @endif
+                <li><a href="#"><span>Livre d'Or</span></a></li>
+                {{--<li><a href="#"><span>Jeux</span></a></li>--}}
+                @if (!Auth::user())
+                    <li class="right"><a href="{{ route('login') }}"><span>Se Connecter</span></a></li>
+                @else
+                    <li>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Se Déconnecter</a>
+                    </li>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+                @endif
             </ul>
         </div>
     </nav>
-    <!-- </div> -->
 </div>

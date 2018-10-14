@@ -29,12 +29,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('landingPage');
+        return view('home');
     }
 
-    public function home()
+    public function organisation()
     {
-        return view('home');
+        return view('organisation');
     }
 
     public function forum()
