@@ -21,7 +21,7 @@ Mix.dispatch('init', Mix);
  * for Webpack. And that's all there is to it. Simple!
  */
 
-let WebpackConfig = require('../src/builder/WebpackConfig');
+let WebpackConfig_SW = require('../src/builder/WebpackConfig');
 
 let path = require('path');
 let glob = require('glob');
@@ -31,7 +31,7 @@ let webpackPlugins = require('laravel-mix').plugins;
 let dotenv = require('dotenv');
 let SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin'); //Our magic
 
-module.exports = new WebpackConfig().build();
+module.exports = new WebpackConfig_SW().build();
 
 plugins.push(
     new SWPrecacheWebpackPlugin({

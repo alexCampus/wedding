@@ -137,6 +137,7 @@
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-1x fa-angle-up"></i></button>
     @include('layouts.footer')
+@yield('script')
     <!-- Scripts -->
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <!-- jQuery Easing -->

@@ -1,40 +1,40 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Example Component</div>
+        <div v-if="route  === 'inscription'">
 
-                    <div class="panel-body">
-                        <label>
-                            <select v-model="selected">
-                                <option disabled value="">Choisissez</option>
-                                <option>Test 1</option>
-                                <option>Test 4</option>
-                                <option>Test 9</option>
-                                <option>Test 5</option>
-                                <option>Test 3</option>
-                            </select>
-                        </label>
-                        <p>{{selected}}</p>
-                        I'm an example vuygjgg
-                    </div>
-                </div>
-            </div>
+            <Subcriber></Subcriber>
         </div>
+        <div v-else>
+            <landing-inscription></landing-inscription>
+        </div>
+
     </div>
 </template>
 
 <script>
+    import LandingInscription from './LandingInscription';
+    import Subcriber from './Subcriber';
+
     export default {
+        components: { Subcriber, LandingInscription },
         data() {
             return {
-                selected: '',
+                route: '',
             };
         },
-
         mounted() {
-            console.log('Component mounted.');
+            this.route = window.location.href.split('/').pop();
+            console.log('Component mounted.', this.route);
         },
+
     };
 </script>
+<style scoped>
+    .panel-heading {
+        text-align: center;
+    }
+
+    select {
+        margin-left: 2%;
+    }
+</style>

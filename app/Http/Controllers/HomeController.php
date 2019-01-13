@@ -37,6 +37,11 @@ class HomeController extends Controller
         return view('organisation');
     }
 
+    public function inscription()
+    {
+        return view('subscriber');
+    }
+
     public function forum()
     {
         return view('forum');
@@ -61,6 +66,7 @@ class HomeController extends Controller
         $this->inscriptionModel->name  = $request->input('name');
         $this->inscriptionModel->email = $request->input('email');
         $this->inscriptionModel->save();
+
         return redirect('/');
     }
 }
