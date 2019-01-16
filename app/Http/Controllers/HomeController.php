@@ -56,17 +56,4 @@ class HomeController extends Controller
     {
         return view('formForum');
     }
-
-    /**
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function inscriptionLandingPage(Request $request)
-    {
-        $this->inscriptionModel->name  = $request->input('name');
-        $this->inscriptionModel->email = $request->input('email');
-        $this->inscriptionModel->save();
-
-        return redirect('/');
-    }
 }

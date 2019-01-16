@@ -21,4 +21,5 @@ Route::middleware('auth:api')->get(
 );
 
 Route::post('/subscribe', 'ApiController@insert');
+Route::post('/landingInscription', 'ApiController@inscriptionLandingPage');
 Route::get('/participant/get/{id}', 'ApiController@getParticipants');

@@ -12,10 +12,10 @@
 
                 @if (Auth::user())
                     <li><a href="{{  route('organisation') }}"><span>Organisation</span></a></li>
-                    <li><a href="{{ route('forum') }}"><span>Forum</span></a></li>
+                <!--<li><a href="{{ route('forum') }}"><span>Forum</span></a></li>
                     <li><a href="{{  route('inscription') }}"><span>Inscription Participation</span></a></li>
                     <li><a href="#"><span>Photo / Vidéos</span></a></li>
-                    <li><a href="#"><span>Livre d'Or</span></a></li>
+                    <li><a href="#"><span>Livre d'Or</span></a></li>-->
                 @endif
 
                 {{--<li><a href="#"><span>Jeux</span></a></li>--}}

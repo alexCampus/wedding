@@ -21,23 +21,30 @@
             </div>
             <div class="row animate-box">
                 <div class="col-md-10 col-md-offset-1">
-                    <form class="form-inline" v-on:submit.prevent="submit">
+                    <vue-snotify></vue-snotify>
+                    <form class="form-inline" v-on:submit.prevent="submit" v-show="isInsert">
                         <div class="col-md-4 col-sm-4">
                             <div class="form-group">
                                 <label for="name" class="sr-only">Nom</label>
-                                <input v-model="name" type="text" class="form-control" id="name" placeholder="Nom" name="name" required>
+                                <input v-model="data.name" type="text" class="form-control" id="name" placeholder="Nom" name="name" required>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4">
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email</label>
-                                <input v-model="email" type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+                                <input v-model="data.email" type="email" class="form-control" id="email" placeholder="Email" name="email" required>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4">
                             <button type="submit" class="btn btn-default btn-block">Je participe</button>
                         </div>
                     </form>
+                    <div class="row text-center section-heading colored">
+                        <div class="col-md-10 col-md-offset-1 subtext">
+                            <h3>Nous avons bien enregistrés vos données, vous recevrez prochainement
+                                un e-mail vous permettant de créer votre compte.</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,18 +52,34 @@
 </template>
 
 <script>
+    import Snotify from 'vue-snotify';
+    import 'vue-snotify/styles/material.css';
+
     export default {
         name: 'LandingInscription',
         data() {
             return {
-                email: '',
-                name: '',
+                data: {
+                    'email': '',
+                    'name': '',
+                },
+                isInsert: true,
             };
         },
         methods: {
             submit() {
-                console.log(this.name);
-                console.log(this.email);
+                axios.post('api/landingInscription', this.data).then((response) => {
+                    if (response.data) {
+                        this.$snotify.success('Nous avons bien enregistrés vos données');
+                        this.data.name = '';
+                        this.data.email = '';
+                        this.isInsert = false;
+                    }
+                }).catch(error => {
+                    this.$snotify.warning('Cet email est déja utilisé.');
+                    this.data.email = '';
+                });
+
             },
         },
     };
