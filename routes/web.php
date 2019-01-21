@@ -10,3 +10,4 @@ Route::post('/landingInscription', 'HomeController@inscriptionLandingPage')->nam
 Route::get('/forum', 'HomeController@forum')->name('forum');
 Route::get('/onePost', 'HomeController@onePost');
 Route::get('/formForum', 'HomeController@formForum');
+Route::get('/listeLanding', 'HomeController@listeLanding')->name('listeLanding');

@@ -56,4 +56,11 @@ class HomeController extends Controller
     {
         return view('formForum');
     }
+
+    public function listeLanding()
+    {
+        $lstLanding = $this->inscriptionModel->all();
+
+        return view('lstLanding', array('lstLanding' => $lstLanding));
+    }
 }

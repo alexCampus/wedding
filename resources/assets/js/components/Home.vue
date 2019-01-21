@@ -2,7 +2,7 @@
     <div class="container">
         <div v-if="route  === 'inscription'">
 
-            <Subcriber></Subcriber>
+            <Subcriber :user_id='userId'></Subcriber>
         </div>
         <div v-else>
             <landing-inscription></landing-inscription>
@@ -17,6 +17,7 @@
 
     export default {
         components: { Subcriber, LandingInscription },
+        props: ['userId'],
         data() {
             return {
                 route: '',

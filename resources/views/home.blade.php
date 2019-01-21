@@ -198,7 +198,7 @@
                         </li>
                         <li class="timeline-inverted animate-box">
                             <div class="timeline-badge"
-                                 style="background-image:url('{{asset("images/Emmenagement.JPG")}}');"></div>
+                                 style="background-image:url('{{asset("images/IMG_0279.JPG")}}');"></div>
                             <div class="timeline-panel">
                                 <div class="overlay overlay-2"></div>
                                 <div class="timeline-heading">
@@ -216,7 +216,7 @@
                         </li>
                         <li class="animate-box">
                             <div class="timeline-badge"
-                                 style="background-image:url('{{asset("images/G.jpg")}}');"></div>
+                                 style="background-image:url('{{asset("images/H.JPG")}}');"></div>
                             <div class="timeline-panel">
                                 <div class="overlay"></div>
                                 <div class="timeline-heading">
@@ -473,8 +473,8 @@
                                     alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
                     </div>
                     <div class="gallery animate-box">
-                        <a class="gallery-img image-popup" href="{{asset('images/selfieStyle/S.jpg')}}"><img
-                                    src="{{asset('images/selfieStyle/S.jpg')}}" class="img-responsive"
+                        <a class="gallery-img image-popup" href="{{asset('images/S.jpg')}}"><img
+                                    src="{{asset('images/S.jpg')}}" class="img-responsive"
                                     alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
                     </div>
                     <div class="gallery animate-box">
@@ -488,8 +488,8 @@
                                     alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
                     </div>
                     <div class="gallery animate-box">
-                        <a class="gallery-img image-popup" href="{{asset('images/selfieStyle/Rivière Sauvage en famille.jpg')}}"><img
-                                    src="{{asset('images/selfieStyle/Rivière Sauvage en famille.jpg')}}" class="img-responsive"
+                        <a class="gallery-img image-popup" href="{{asset('images/selfieStyle/riviere.jpg')}}"><img
+                                    src="{{asset('images/selfieStyle/riviere.jpg')}}" class="img-responsive"
                                     alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
                     </div>
                     <div class="gallery animate-box">

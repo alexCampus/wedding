@@ -22,7 +22,7 @@
             <div class="row animate-box">
                 <div class="col-md-10 col-md-offset-1">
                     <vue-snotify></vue-snotify>
-                    <form class="form-inline" v-on:submit.prevent="submit" v-show="isInsert">
+                    <form class="form-inline" v-on:submit.prevent="submit" v-if="isInsert">
                         <div class="col-md-4 col-sm-4">
                             <div class="form-group">
                                 <label for="name" class="sr-only">Nom</label>
@@ -39,10 +39,11 @@
                             <button type="submit" class="btn btn-default btn-block">Je participe</button>
                         </div>
                     </form>
-                    <div class="row text-center section-heading colored">
+                    <div class="row text-center section-heading colored" v-else>
                         <div class="col-md-10 col-md-offset-1 subtext">
-                            <h3>Nous avons bien enregistrés vos données, vous recevrez prochainement
-                                un e-mail vous permettant de créer votre compte.</h3>
+                            <h3>Te voila inscrit, te voila attendu, ravis que tu soit présent le jour J. Bientôt tu recevras ton passeport et
+                                dans quelques semaines des informations pour inscrire toi et ta famille. Bien sûr, nous te fournirons à cette
+                                occasion plein d'informations pour dormir, manger, boire, se vétir, s'amuser, bref kiffer le moment à nos côtés.</h3>
                         </div>
                     </div>
                 </div>
@@ -52,7 +53,7 @@
 </template>
 
 <script>
-    import Snotify from 'vue-snotify';
+    import Snotify from 'vue-snotify/vue-snotify.min.js';
     import 'vue-snotify/styles/material.css';
 
     export default {
