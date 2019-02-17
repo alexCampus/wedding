@@ -328,7 +328,7 @@
             <div class="row row-bottom-padded-lg">
                 <div class="col-md-4 text-center animate-box">
                     <div class="groom-men">
-                        <img src="https://foxdao.net/wp-content/uploads/2017/01/Trollhunters-Photo-11.jpg"
+                        <img src="{{asset('images/temoins/alex.jpg')}}"
                              class="img-responsive"
                              alt="Free HTML5 Bootstrap Template by QBootstrap.com" style="width: 400px;height: 400px;">
                         <h3>Alexandre De Pembroke et Montgomery</h3>
@@ -421,8 +421,8 @@
                                     alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
                     </div>
                     <div class="gallery animate-box">
-                        <a class="gallery-img image-popup" href="{{asset('images/selfieStyle/P.jpg')}}"><img
-                                    src="{{asset('images/selfieStyle/P.jpg')}}" class="img-responsive"
+                        <a class="gallery-img image-popup" href="{{asset('images/selfieStyle/Selfie Famille 2.jpeg')}}"><img
+                                    src="{{asset('images/selfieStyle/Selfie Famille 2.jpeg')}}" class="img-responsive"
                                     alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
                     </div>
                     <div class="gallery animate-box">
@@ -582,8 +582,8 @@
                                     alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
                     </div>
                     <div class="gallery animate-box">
-                        <a class="gallery-img image-popup" href="{{asset('images/selfieStyle/X.jpg')}}"><img
-                                    src="{{asset('images/selfieStyle/X.jpg')}}" class="img-responsive"
+                        <a class="gallery-img image-popup" href="{{asset('images/selfieStyle/Selfie Famille 3.jpeg')}}"><img
+                                    src="{{asset('images/selfieStyle/Selfie Famille 3.jpeg')}}" class="img-responsive"
                                     alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
                     </div>
                     <div class="gallery animate-box">
@@ -602,13 +602,13 @@
                                     alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
                     </div>
                     <div class="gallery animate-box">
-                        <a class="gallery-img image-popup" href="{{asset('images/selfieStyle/Selfie Famille 2.jpeg')}}"><img
-                                    src="{{asset('images/selfieStyle/Selfie Famille 2.jpeg')}}" class="img-responsive"
+                        <a class="gallery-img image-popup" href="{{asset('images/selfieStyle/X.jpg')}}"><img
+                                    src="{{asset('images/selfieStyle/X.jpg')}}" class="img-responsive"
                                     alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
                     </div>
                     <div class="gallery animate-box">
-                        <a class="gallery-img image-popup" href="{{asset('images/selfieStyle/Selfie Famille 3.jpeg')}}"><img
-                                    src="{{asset('images/selfieStyle/Selfie Famille 3.jpeg')}}" class="img-responsive"
+                        <a class="gallery-img image-popup" href="{{asset('images/selfieStyle/P.jpg')}}"><img
+                                    src="{{asset('images/selfieStyle/P.jpg')}}" class="img-responsive"
                                     alt="Free HTML5 Bootstrap Template by QBootstrap.com"></a>
                     </div>
                     <div class="gallery animate-box">

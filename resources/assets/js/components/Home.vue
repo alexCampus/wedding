@@ -2,7 +2,7 @@
     <div class="container">
         <div v-if="route  === 'inscription'">
 
-            <Subcriber :user_id='userId'></Subcriber>
+            <Subcriber :userId='userId'></Subcriber>
         </div>
         <div v-else>
             <landing-inscription></landing-inscription>
@@ -25,7 +25,7 @@
         },
         mounted() {
             this.route = window.location.href.split('/').pop();
-            console.log('Component mounted.', this.route);
+            console.log('Component mounted.', this.userId);
         },
 
     };

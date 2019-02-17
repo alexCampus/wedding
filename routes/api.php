@@ -22,4 +22,5 @@ use Illuminate\Http\Request;
 
 Route::post('/subscribe', 'ApiController@insert');
 Route::post('/landingInscription', 'ApiController@inscriptionLandingPage');
+Route::post('/deletePar/{id}', 'ApiController@deletePar');
 Route::get('/participant/get/{id}', 'ApiController@getParticipants');

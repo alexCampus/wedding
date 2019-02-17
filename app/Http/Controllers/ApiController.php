@@ -61,5 +61,15 @@ class ApiController extends Controller
         // return redirect('/');
     }
 
+    public function deletePar($id, Participant $participant, Request $request)
+    {
+        $res = false;
+        if (isset($request->token) && $request->token === 'wedding2019%24Olive%25Mari') {
+            $res = $participant->find($id)->delete();
+        }
+
+        return response()->json($res);
+    }
+
 
 }

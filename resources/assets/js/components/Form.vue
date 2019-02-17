@@ -41,7 +41,7 @@
 
     export default {
         name: 'Form',
-        props: ['select', 'user_id'],
+        props: ['select', 'user_id', 'par'],
         data() {
             return {
                 participant: {
@@ -63,6 +63,14 @@
                     }
                 });
             },
+        },
+        created() {
+            if (this.par) {
+                this.participant.name[1] = this.par.name;
+                this.participant.firstname[1] = this.par.firstname;
+                this.participant.age[1] = this.par.age;
+            }
+
         },
     };
 </script>
