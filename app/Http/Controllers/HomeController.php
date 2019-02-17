@@ -59,7 +59,7 @@ class HomeController extends Controller
 
     public function listeLanding()
     {
-        $lstLanding = $this->inscriptionModel->all();
+        $lstLanding = $this->inscriptionModel->orderBy('name')->get();
 
         return view('lstLanding', array('lstLanding' => $lstLanding));
     }
