@@ -55,11 +55,20 @@
             onSubmit: function(submitEvent) {
                 let data = [];
                 for (let i = 1; i <= this.select; i++) {
-                    data.push({ name: this.participant.name[i], firstname: this.participant.firstname[i], age: this.participant.age[i], user_id: this.user_id });
+                    data.push({
+                        id: typeof this.par !== 'undefined' ? this.par.id : null,
+                        name: this.participant.name[i],
+                        firstname: this.participant.firstname[i],
+                        age: this.participant.age[i],
+                        user_id: this.user_id,
+                    });
                 }
                 axios.post('api/subscribe', data).then((response) => {
                     if (response.data) {
                         this.$emit('insertOk', true);
+                        if (typeof this.par !== 'undefined') {
+                           this.$emit('updateOk', this.par);
+                        }
                     }
                 });
             },

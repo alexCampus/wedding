@@ -11,7 +11,7 @@
                                 <option v-for="number in numbers" :value="number">{{number}}</option>
                             </select>
                         </label>
-                    </div
+                    </div>
                     <div class="panel-body">
                         <Form :select="selected" :user_id='userId' v-if="selected !== ''" @insertOk="submitForm"></Form>
                     </div>

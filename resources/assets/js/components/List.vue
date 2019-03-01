@@ -11,7 +11,7 @@
                         <span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true" id="pencylGly" v-on:click="updatePar(par)"></span>
                         <div class="list-group">
                             <h3 class="list-group-item-heading">{{par.firstname | capitalize}} {{par.name | capitalize}} <i>({{par.age}} ans) </i></h3>
-                            <Form :select="selected" :userId='user_id' v-if="update === par.id" :par="par"></Form>
+                            <Form :select="selected" :user_id='user_id' v-if="update === par.id" :par="par" @updateOk="submitForm"></Form>
                         </div>
                         <hr>
                     </div>
@@ -60,8 +60,17 @@
                     this.selected = 1;
                     this.update = par.id;
                 }
-
-
+            },
+            submitForm(val) {
+                if (typeof val !== 'undefined') {
+                    this.update = null;
+                    this.selected = 0;
+                    this.participants.forEach((el, key) => {
+                        if (el['id'] === val['id']) {
+                            this.$parent.getParticipants();
+                        }
+                    });
+                }
             },
         },
     };

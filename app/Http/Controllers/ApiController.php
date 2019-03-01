@@ -36,11 +36,22 @@ class ApiController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\JsonResponsenpm run watch
+     *
      */
     public function insert(Request $request)
     {
-        $this->participantModel->insert($request->all());
+        $data = $request->all();
+        if ($data[0]['id']) {
+            $part            = $this->participantModel->find($data[0]['id']);
+            $part->name      = $data[0]['name'];
+            $part->firstname = $data[0]['firstname'];
+            $part->age       = $data[0]['age'];
+            $part->save();
+
+        } else {
+            $this->participantModel->insert($request->all());
+        }
 
         return response()->json(true);
     }
