@@ -1,6 +1,6 @@
 <template>
     <div>
-        <List :user_id='userId' :participants='participants' v-if='participants.length > 0'></List>
+        <List :user_id='userId' :participants='participants' v-if='participants.length > 0' @upPart="upPart"></List>
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
@@ -52,6 +52,13 @@
                 let self = this;
                 axios.get('api/participant/get/' + self.userId).then(function(response) {
                     self.participants = response.data;
+                });
+            },
+            upPart(val) {
+                this.participants.forEach((el, key) => {
+                    if (el['id'] === val['id']) {
+                        this.participants[key] = val;
+                    }
                 });
             },
         },

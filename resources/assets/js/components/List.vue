@@ -34,6 +34,7 @@
             return {
                 update: true,
                 selected: 0,
+                part: '',
             };
         },
         methods: {
@@ -65,11 +66,7 @@
                 if (typeof val !== 'undefined') {
                     this.update = null;
                     this.selected = 0;
-                    this.participants.forEach((el, key) => {
-                        if (el['id'] === val['id']) {
-                            this.$parent.getParticipants();
-                        }
-                    });
+                    this.$emit('upPart', val);
                 }
             },
         },

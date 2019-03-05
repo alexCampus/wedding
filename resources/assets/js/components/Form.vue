@@ -21,7 +21,7 @@
                     <label for="age" class="col-md-4 control-label">Age</label>
 
                     <div class="col-md-6">
-                        <input id="age" type="number" class="form-control" name="age" v-model="participant.age[numPar]" required autofocus>
+                        <input id="age" type="number" class="form-control" name="age" v-model="participant.age[numPar]" required autofocus min="0">
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                     if (response.data) {
                         this.$emit('insertOk', true);
                         if (typeof this.par !== 'undefined') {
-                           this.$emit('updateOk', this.par);
+                            this.$emit('updateOk', data[0]);
                         }
                     }
                 });
