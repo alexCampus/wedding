@@ -2,7 +2,7 @@
     <div>
         <form class="form-horizontal" v-on:submit.prevent="onSubmit" v-if="select > 0">
             <div v-for="numPar in select">
-                <h3>Participant {{numPar}}</h3>
+                <h3 v-if="!par">Participant {{numPar}}</h3>
                 <div class="form-group">
                     <label for="name" class="col-md-4 control-label">Nom</label>
 
@@ -37,23 +37,23 @@
 </template>
 
 <script>
-    import axios from 'axios';
+    import axios from 'axios'
 
     export default {
         name: 'Form',
         props: ['select', 'user_id', 'par'],
-        data() {
+        data () {
             return {
                 participant: {
                     name: [],
                     firstname: [],
                     age: [],
                 },
-            };
+            }
         },
         methods: {
-            onSubmit: function(submitEvent) {
-                let data = [];
+            onSubmit: function (submitEvent) {
+                let data = []
                 for (let i = 1; i <= this.select; i++) {
                     data.push({
                         id: typeof this.par !== 'undefined' ? this.par.id : null,
@@ -61,26 +61,26 @@
                         firstname: this.participant.firstname[i],
                         age: this.participant.age[i],
                         user_id: this.user_id,
-                    });
+                    })
                 }
                 axios.post('api/subscribe', data).then((response) => {
                     if (response.data) {
-                        this.$emit('insertOk', true);
+                        this.$emit('insertOk', true)
                         if (typeof this.par !== 'undefined') {
-                            this.$emit('updateOk', data[0]);
+                            this.$emit('updateOk', data[0])
                         }
                     }
-                });
+                })
             },
         },
-        created() {
+        created () {
             if (this.par) {
-                this.participant.name[1] = this.par.name;
-                this.participant.firstname[1] = this.par.firstname;
-                this.participant.age[1] = this.par.age;
+                this.participant.name[1] = this.par.name
+                this.participant.firstname[1] = this.par.firstname
+                this.participant.age[1] = this.par.age
             }
 
         },
-    };
+    }
 </script>
 
