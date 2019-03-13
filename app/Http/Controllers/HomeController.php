@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\InscriptionLandingPage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -20,6 +21,7 @@ class HomeController extends Controller
     public function __construct(InscriptionLandingPage $inscriptionModel)
     {
         $this->inscriptionModel = $inscriptionModel;
+
     }
 
     /**
@@ -42,20 +44,7 @@ class HomeController extends Controller
         return view('subscriber');
     }
 
-    public function forum()
-    {
-        return view('forum');
-    }
 
-    public function onePost()
-    {
-        return view('onePostForum');
-    }
-
-    public function formForum()
-    {
-        return view('formForum');
-    }
 
     public function listeLanding()
     {
