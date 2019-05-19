@@ -10,7 +10,7 @@
                         <h2>Ici on s'inscrit</h2>
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1 subtext">
-                                <h3>On gère l'inscription de tous tes potos et de ta participation à la fiesta</h3>
+                                <h3>Ici on finalise son inscription</h3>
                             </div>
                         </div>
                     </div>

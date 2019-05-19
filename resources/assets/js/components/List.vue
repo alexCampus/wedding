@@ -4,11 +4,13 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <label>Liste des personnes vous accompagnant </label>
+                        <label>Liste des personnes y compris vous</label>
                     </div>
                     <div class="panel-body" v-for="par in participants">
-                        <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true" id="removeGly" v-on:click="deletePar(par.id)"></span>
-                        <span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true" id="pencylGly" v-on:click="updatePar(par)"></span>
+                        <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true" id="removeGly" v-on:click="deletePar(par.id)"
+                              v-if="typeof par.firstname !== 'undefined'"></span>
+                        <span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true" id="pencylGly" v-on:click="updatePar(par)"
+                              v-if="typeof par.firstname !== 'undefined'"></span>
                         <div class="list-group">
                             <h3 class="list-group-item-heading">{{par.firstname | capitalize}} {{par.name | capitalize}} <i>({{par.age}} ans) </i></h3>
                             <Form :select="selected" :user_id='user_id' v-if="update === par.id" :par="par" @updateOk="submitForm"></Form>
@@ -34,8 +36,23 @@
             return {
                 update: true,
                 selected: 0,
-                part: '',
+                part: ''
             };
+        },
+        filters: {
+            capitalize: function(value) {
+                if (!value) {
+                    return '';
+                }
+                let returnVal = '';
+                value = value.toString().toLowerCase();
+                value = value.split(' ');
+                value.forEach(el => {
+                    returnVal += el.charAt(0).toUpperCase() + el.slice(1) + ' ';
+                });
+
+                return returnVal;
+            }
         },
         methods: {
             deletePar(id) {
@@ -68,8 +85,8 @@
                     this.selected = 0;
                     this.$emit('upPart', val);
                 }
-            },
-        },
+            }
+        }
     };
 </script>
 

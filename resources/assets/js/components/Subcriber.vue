@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <label>Nombre de personnes vous accompagnant
+                        <label>Nombre de personnes y compris vous
                             <select v-model.number="selected">
                                 <option disabled value="">Choisissez</option>
                                 <option v-for="number in numbers" :value="number">{{number}}</option>
@@ -35,7 +35,7 @@
                 selected: '',
                 numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 participants: 0,
-                route: '',
+                route: ''
             };
         },
         created() {
@@ -60,13 +60,13 @@
                         this.participants[key] = val;
                     }
                 });
-            },
+            }
         },
 
         mounted() {
             this.route = window.location.href.split('/').pop();
-            console.log('Component mounted.', this.userId);
-        },
+            /*console.log('Component mounted.', this.userId);*/
+        }
     };
 </script>
 

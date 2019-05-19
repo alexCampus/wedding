@@ -36,6 +36,6 @@ class User extends Authenticatable
 
     public function participants()
     {
-        return $this->hasMany('App/Participant');
+        return $this->hasMany('App\Participant');
     }
 }

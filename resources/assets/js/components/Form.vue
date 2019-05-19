@@ -2,7 +2,7 @@
     <div>
         <form class="form-horizontal" v-on:submit.prevent="onSubmit" v-if="select > 0">
             <div v-for="numPar in select">
-                <h3>Participant {{numPar}}</h3>
+                <h3 v-if="typeof par === 'undefined' ">Accompagnant {{numPar}}</h3>
                 <div class="form-group">
                     <label for="name" class="col-md-4 control-label">Nom</label>
 
@@ -47,8 +47,8 @@
                 participant: {
                     name: [],
                     firstname: [],
-                    age: [],
-                },
+                    age: []
+                }
             };
         },
         methods: {
@@ -60,7 +60,7 @@
                         name: this.participant.name[i],
                         firstname: this.participant.firstname[i],
                         age: this.participant.age[i],
-                        user_id: this.user_id,
+                        user_id: this.user_id
                     });
                 }
                 axios.post('api/subscribe', data).then((response) => {
@@ -71,7 +71,7 @@
                         }
                     }
                 });
-            },
+            }
         },
         created() {
             if (this.par) {
@@ -80,7 +80,7 @@
                 this.participant.age[1] = this.par.age;
             }
 
-        },
+        }
     };
 </script>
 

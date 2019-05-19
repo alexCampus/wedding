@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\InscriptionLandingPage;
 use App\Participant;
+use App\User;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -30,13 +31,16 @@ class ApiController extends Controller
     public function getParticipants($id)
     {
         $participants = $this->participantModel->where('user_id', '=', $id)->get();
+        $user         = User::find($id);
+        $participants->prepend($user);
+
 
         return response()->json($participants);
     }
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\JsonResponsenpm run watch
+     * @return \Illuminate\Http\JsonResponse
      *
      */
     public function insert(Request $request)

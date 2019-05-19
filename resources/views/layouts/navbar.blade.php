@@ -11,11 +11,14 @@
                 <li><a href={{ route('home') . '#lesTemoins' }}><span>Les Témoins</span></a></li>
 
                 @if (Auth::user())
-                    <li><a href="{{  route('organisation') }}"><span>Organisation</span></a></li>
+                    <li><a href="{{  route('organisation') }}"><span>Déroulement</span></a></li>
+                    <li><a href="{{  route('hebergement') }}"><span>Hébergements</span></a></li>
                 <!--<li><a href="{{ route('forum') }}"><span>Forum</span></a></li>-->
                     <li><a href="{{  route('inscription') }}"><span>Inscription Participation</span></a></li>
-                    <li><a href="{{  route('listeLanding') }}"><span>Liste LandingPage</span></a></li>
-                    <!-- <li><a href="#"><span>Photo / Vidéos</span></a></li>
+                    @if(Auth::user()->adminLevel > 0)
+                        <li><a href="{{  route('listeLanding') }}"><span>Liste LandingPage</span></a></li>
+                    @endif
+                <!-- <li><a href="#"><span>Photo / Vidéos</span></a></li>
                      <li><a href="#"><span>Livre d'Or</span></a></li>-->
                 @endif
 

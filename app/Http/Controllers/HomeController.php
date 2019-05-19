@@ -37,6 +37,11 @@ class HomeController extends Controller
         return view('organisation');
     }
 
+    public function hebergement()
+    {
+        return view('hebergement');
+    }
+
     public function inscription()
     {
         return view('subscriber');
