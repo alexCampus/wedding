@@ -78,7 +78,7 @@
                             </div>
                             <p>Nous commencerons par un accueil avec rafraîchissements et goûters, après la cérémonie démarre la fête, non THE FIESTA pour finir jusqu'au lever du
                                 soleil sur le magnifique lac d'Aydat.
-                                <span style="visibility: hidden">test test</span></p>
+                            </p>
 
                         </div>
                     </div>

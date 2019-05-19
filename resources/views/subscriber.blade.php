@@ -7,11 +7,8 @@
                 <div class="col-md-8 col-md-offset-2">
                     <div class="col-md-12 text-center section-heading svg-sm colored">
                         <img src="{{asset('images/flaticon/svg/005-two.svg')}}" class="svg" alt="Free HTML5 Bootstrap Template by QBootstrap.com">
-                        <h2>Ici on s'inscrit</h2>
+                        <h2>Ici on finalise son inscription</h2>
                         <div class="row">
-                            <div class="col-md-10 col-md-offset-1 subtext">
-                                <h3>Ici on finalise son inscription</h3>
-                            </div>
                         </div>
                     </div>
                 </div>
