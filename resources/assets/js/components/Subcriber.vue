@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <label>Nombre de personnes y compris vous
+                        <label>Nombre de personnes vous accompagnant
                             <select v-model.number="selected">
                                 <option disabled value="">Choisissez</option>
                                 <option v-for="number in numbers" :value="number">{{number}}</option>

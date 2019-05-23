@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <label>Liste des personnes y compris vous</label>
+                        <label>Liste des personnes dont vous</label>
                     </div>
                     <div class="panel-body" v-for="par in participants">
                         <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true" id="removeGly" v-on:click="deletePar(par.id)"
