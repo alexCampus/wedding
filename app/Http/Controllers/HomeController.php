@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\InscriptionLandingPage;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,13 +14,20 @@ class HomeController extends Controller
     protected $inscriptionModel;
 
     /**
+     * @var
+     */
+    protected $user;
+
+    /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param InscriptionLandingPage $inscriptionModel
+     * @param User $user
      */
-    public function __construct(InscriptionLandingPage $inscriptionModel)
+    public function __construct(InscriptionLandingPage $inscriptionModel, User $user)
     {
         $this->inscriptionModel = $inscriptionModel;
+        $this->user             = $user;
     }
 
     /**
@@ -67,5 +75,12 @@ class HomeController extends Controller
         $lstLanding = $this->inscriptionModel->orderBy('name')->get();
 
         return view('lstLanding', array('lstLanding' => $lstLanding));
+    }
+
+    public function listeInscrits()
+    {
+        $lstLanding = $this->user->orderBy('name')->get();
+
+        return view('lstInscrit', array('lstLanding' => $lstLanding));
     }
 }

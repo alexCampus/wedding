@@ -17,6 +17,7 @@
                     <li><a href="{{  route('inscription') }}"><span>Inscription Participation</span></a></li>
                     @if(Auth::user()->adminLevel > 0)
                         <li><a href="{{  route('listeLanding') }}"><span>Liste LandingPage</span></a></li>
+                        <li><a href="{{  route('listeInscrits') }}"><span>Liste Inscrits</span></a></li>
                     @endif
                 <!-- <li><a href="#"><span>Photo / Vidéos</span></a></li>
                      <li><a href="#"><span>Livre d'Or</span></a></li>-->
